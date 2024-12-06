@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eurooppalainen turisti - Tervetuloa!</title>
+  <link rel="stylesheet" href="tervetuloa.css">
+</head>
+<body>
+  <div id="welcome-screen">
+    <div id="welcome-content">
+      <h1>Tervetuloa Eurooppalainen turisti peliin!</h1>
+      <p>Tässä pelissä sinä olet turisti, joka seikkailee viidessä eri Euroopan maassa. Tavoitteesi on päästä kaikkiin viiteen maahan. Aloitat seikkailusi yhdestä Euroopan maasta ja saat 1500 € sponsorirahaa matkallesi. Valitse yksi kolmesta lähimmistä lentokentästä ja tee valintoja, jotka vaikuttavat päästöihisi ja kuluihisi.</p>
+      <p>Kun saavut uuteen maahan saat palkkion kunniaosoituksena. Kunniaosoituksen määrä riippuu kunkin valtion varallisuudesta (maan BKT).</p>
+      <h3>Lentojen hinnat ja päästöt:</h3>
+      <ul>
+        <li><strong>Vähänpäästöinen luokka:</strong> Päästöt: 100 g CO2 per kilometri, Hinta: 0,3 € per kilometri</li>
+        <li><strong>Keskipäästöinen luokka:</strong> Päästöt: 200 g CO2 per kilometri, Hinta: 0,2 € per kilometri</li>
+        <li><strong>Suurpäästöinen luokka:</strong> Päästöt: 300 g CO2 per kilometri, Hinta: 0,1 € per kilometri</li>
+      </ul>
+      <p>Pelin tavoitteena on käydä kaikissa viidessä maassa mahdollisimman pienillä päästöillä. Mikäli rahasi loppuvat, peli päättyy.</p>
+      <button id="start-button">Aloita peli</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('start-button').addEventListener('click', function () {
+      window.location.href = 'peli.html';
+    });
+  </script>
+</body>
+</html>

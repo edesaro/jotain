@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eurooppalainen Turisti</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="peli2v2.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script defer src="js2.js"></script>
+</head>
+<body>
+  <!-- Pelaajan nimen valintanäyttö -->
+  <div id="name-overlay" class="overlay">
+    <div class="name-dialog">
+      <h2>Anna pelaajan nimi</h2>
+      <input type="text" id="player-name-input" placeholder="Kirjoita nimesi">
+      <button onclick="startGame()">Aloita peli</button>
+    </div>
+  </div>
+
+  <!-- Pelin käyttöliittymän rakenne -->
+  <div class="container">
+    <!-- Ylätunniste ja valikko -->
+    <header class="header">
+      <h1>Eurooppalainen Turisti</h1>
+      <nav class="menu">
+        <button onclick="toggleSidebar('rules')">❓ Säännöt</button>
+        <button onclick="toggleSidebar('story')">📚 Tarina</button>
+      </nav>
+    </header>
+
+    <!-- Säännöt-sivupalkki -->
+    <div id="sidebar-rules" class="sidebar">
+      <button onclick="closeSidebar('rules')">✖ Sulje</button>
+      <h2>Pelin säännöt</h2>
+      <ul>
+        <li>Tavoitteesi on käydä viidellä (5) satunnaisesti valitulla lentokentällä mahdollisimman pienillä päästöillä.</li>
+        <li>Saat 1500€ pelin alussa.</li>
+        <li>Valitse kolmesta lähimmästä lentokentästä minne haluat lentää.</li>
+        <li>Lentoluokan valinta vaikuttaa kustannuksiin ja päästöihin.</li>
+        <li>Voitat pelin, kun olet käynyt kaikilla viidellä tavoitelentokentällä.</li>
+        <li>Häviät pelin, jos rahat loppuvat.</li>
+      </ul>
+    </div>
+
+    <!-- Tarina-sivupalkki -->
+    <div id="sidebar-story" class="sidebar">
+      <button onclick="closeSidebar('story')">✖ Sulje</button>
+      <h2>Pelin tarina</h2>
+      <p>Tervetuloa Eurooppalainen Turisti -peliin! Tässä pelissä olet turisti, joka seikkailee viidessä Euroopan maassa. Aloitat matkasi yhdestä Euroopan maasta 1500€ sponsorirahalla. Valitse lentokenttä ja tee päätöksiä, jotka vaikuttavat päästöihisi ja kuluihisi. Tavoitteenasi on käydä kaikissa viidessä kohteessa mahdollisimman pienillä päästöillä.</p>
+    </div>
+
+    <!-- Pääsisältö: kartta ja pelaajatiedot -->
+    <main class="main-content">
+      <section class="map">
+        <div id="map1"></div>
+      </section>
+
+      <aside class="player-info">
+        <h2>Pelaajatiedot</h2>
+        <p>Käyttäjänimi: <span id="player-name">--</span></p>
+        <p>Budjetti: <span id="player-budjetti">1500 €</span></p>
+        <p>Käyntikohteet: <span id="player-kohde">0</span></p>
+        <p>Kokonaispäästöt: <span id="player-paastot">0 kg</span></p>
+        <button onclick="alert('Näytä pelaajan tilastot')">📊 Tilastot</button>
+      </aside>
+    </main>
+
+    <!-- Alatunniste: lisätoiminnot -->
+    <footer class="footer">
+      <button onclick="toggleFullScreen()">🖥️ Koko ruudun tila</button>
+    </footer>
+  </div>
+</body>
+</html>
