@@ -6,10 +6,12 @@
   <title>Eurooppalainen Turisti</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <link rel="stylesheet" href="peli2v2.css">
-  <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script> <!-- Leaflet JS -->
   <script defer src="js2.js"></script>
 </head>
 <body>
+
+
   <!-- Pelaajan nimen valintanäyttö -->
   <div id="name-overlay" class="overlay">
     <div class="name-dialog">
@@ -61,8 +63,10 @@
         <h2>Pelaajatiedot</h2>
         <p>Käyttäjänimi: <span id="player-name">--</span></p>
         <p>Budjetti: <span id="player-budjetti">1500 €</span></p>
-        <p>Käyntikohteet: <span id="player-kohde">0</span></p>
+        <p>Käydyt lentoasemat: <span id="player-kohde">0</span></p>
         <p>Kokonaispäästöt: <span id="player-paastot">0 kg</span></p>
+        <p>Nykyinen sijainti: <span id="player-location">--</span></p>
+        <p> <span id="current-weather">--</span></p> <!--- nykyinen sää -->
         <button onclick="alert('Näytä pelaajan tilastot')">📊 Tilastot</button>
       </aside>
     </main>
